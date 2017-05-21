@@ -20,7 +20,7 @@ def run_example(expr):
     """
 
     p = PreJsPy.PreJsPy()
-    print(p.parse(expr))
+    print((p.parse(expr)))
 
 
 def make_testcase(inp, msg):
@@ -37,11 +37,11 @@ def make_testcase(inp, msg):
     p = PreJsPy.PreJsPy()
     out = p.parse(inp)
 
-    print("""{
+    print(("""{
     "input": %s,
     "output": %s,
     "message": %s
-}""" % (json.dumps(inp), json.dumps(out), json.dumps(msg)))
+}""" % (json.dumps(inp), json.dumps(out), json.dumps(msg))))
 
 
 def main():

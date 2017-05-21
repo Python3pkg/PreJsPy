@@ -45,7 +45,7 @@ class TestPreJsPy(unittest.TestCase):
         :param fn: filename of file to read.
         """
 
-        print("\nRunning tests from %s" % fn)
+        print(("\nRunning tests from %s" % fn))
 
         # Read the test case file
         with open(os.path.join(BASE_PATH, fn), 'r') as f:

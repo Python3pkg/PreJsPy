@@ -84,7 +84,7 @@ class PreJsPy(object):
         :rtype: int
         """
 
-        return max(map(len, o.keys()))
+        return max(list(map(len, list(o.keys()))))
 
     @staticmethod
     def __getMaxMemLen(ary):
@@ -96,7 +96,7 @@ class PreJsPy(object):
         :rtype: int
         """
 
-        return max(map(len, ary))
+        return max(list(map(len, ary)))
 
     @staticmethod
     def __isDecimalDigit(ch):
@@ -279,7 +279,7 @@ class PreJsPy(object):
         :rtype: int
         """
 
-        if op_val in self.getBinaryOperators().keys():
+        if op_val in list(self.getBinaryOperators().keys()):
             return self.getBinaryOperators()[op_val]
         else:
             return 0
@@ -371,7 +371,7 @@ class PreJsPy(object):
             to_check = expr[state['index']:state['index'] + self.getMaxBinaryOperatorsLength()]
             tc_len = len(to_check)
             while tc_len > 0:
-                if to_check in self.getBinaryOperators().keys():
+                if to_check in list(self.getBinaryOperators().keys()):
                     state['index'] += tc_len
                     return to_check
                 tc_len -= 1
@@ -625,7 +625,7 @@ class PreJsPy(object):
 
             identifier = expr[start:state['index']]
 
-            if identifier in self.getConstants().keys():
+            if identifier in list(self.getConstants().keys()):
                 return {
                     'type': PreJsPy.LITERAL,
                     'value': self.getConstants()[identifier],
